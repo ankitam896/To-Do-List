@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>The To Do List</title>
+     <style>
+        ul {
+            margin: 0;
+            padding: 0;
+        }
+        ul li {
+            cursor: pointer;
+            position: relative;
+            padding: 10px 10px 10px 35px;
+            background-color: rgb(165, 165, 236);
+            list-style-type: none;
+            font-size: 18px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            transition: 0.2s;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            
+        }
+        ul li:nth-child(odd){
+            background-color: rgb(189, 189, 250);
+        }
+        ul li:hover{
+        background-color: rgb(116, 116, 255);
+        }
+        ul li.checked {
+        background-color: rgb(85, 85, 224);
+        color: white;
+       text-decoration: line-through; 
+    }
+    ul li.checked::before {
+  content: '';
+  position: absolute;
+  border-color: white;
+  border-style: solid;
+  border-width: 0 2px 2px 0;
+  top: 10px;
+  left: 16px;
+  transform: rotate(45deg);
+  height: 15px;
+  width: 7px;
+}
+    .header {
+        background-color: rgb(6, 6, 122);
+            padding: 20px 40px 40px 40px;
+            color: white;
+    }
+    .header::after {
+        content: "";
+        display: table;
+        clear:both;
+    }
+    #myInput {
+     padding:8px;
+     border: none;
+     width: 90%;
+     border-radius: 0px;
+     float: left;
+    }
+    .Btn{
+        background-color: rgb(218, 216, 216);
+        color:grey;
+        padding: 7px;
+        float: left;
+        width:5%;
+        text-align:center;
+        cursor: pointer;
+        transition: 0.3s;
+        border-radius: 0;
+    }
+    .Btn:hover {
+        background-color: rgb(175, 171, 171);
+    }
+    .close {
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 12px 16px 12px 16px;
+}
+.close:hover {
+  background-color:  rgb(6, 6, 122); 
+  color: white;
+}
+     </style>
+</head>
+<body>
+    <div id="list" class="header">
+    <h2 align="center">My To Do List</h2>
+    <input type="text" id="myInput" placeholder="Title...">
+    <span onclick = "newElement()" class="Btn">Add Task</span>
+    </div>
+    <ul id="ul">
+        <li>Meeting at 8pm</li>
+        <li class="checked">Pay my Bills</li>
+        <li>Go to Market</li>
+        <li>Hit Gym</li>
+        <li>Medical Check-up</li>
+        <li>Read a book</li>
+    </ul>
+    <script src="program.js">
+    </script>
+</body>
+</html>
